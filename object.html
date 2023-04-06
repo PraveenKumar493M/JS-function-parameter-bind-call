@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT</title>
+</head>
+<body>
+    <h1>object practice js</h1>
+<p id="obj"></p>
+
+<button onclick="tim()">click</button>
+
+    <script>
+
+        tim = () => {
+           document.getElementById("obj").innerHTML=Date();
+        }
+
+        document.getElementById("obj");
+         var bus={type:"AC",name:"volvo",weight_ton:7,price_$:5000,id:1}
+         console.log(bus);
+         console.log(bus.name);
+
+const student={
+    fname:"praveen",
+    lname:"kumar",
+    age:20,
+    id:1,
+    batch:23,
+    fullName : function() {
+    return this.fname +''+ this.lname;
+    }
+};
+document.getElementById("obj").innerHTML=student.fullName();
+console.log(student);
+    </script>
+</body>
+</html>
