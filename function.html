@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNCTION</title>
+</head>
+<body>
+    <h1>Function methodsof(parameter, call, apply,bind)</h1>
+    <p id="func"></p>
+    <div id="func1"></div>
+    <p id="call"></p> 
+    <p id="bind"></p>
+
+    <script>
+      
+       var student= myfun(4,5);
+       document.getElementById("func").innerHTML=student;
+       function myfun(a,b){
+        return a*b;
+       }
+       console.log(student);
+
+       var Name= funct("praveen","kumar");
+       document.getElementById("func1").innerHTML=Name;
+       function funct(fname,lname){
+        return fname+lname;
+       }
+       console.log(Name);
+
+       const x= (a,b) => {return a*b};
+       let b=x(10,5);
+       console.log(b);
+       
+       //call function
+       const car= {model : function() {
+        return this.name +'' + this.type;
+       }
+    }
+
+       const car1={
+        name:"volvo",
+        type:"AC"
+       }
+
+       const car2={
+        name:"bennz",
+        type:"non AC"
+       }
+     document.getElementById("call").innerHTML=car.model.call(car1);
+
+     //apply method 
+
+     const stud= {
+        fullName: function(city,country){
+            return this.firstName +' '+ this.lastName +' '+ city +' '+ country;
+        }
+     }
+     const stud1={
+        firstName:"praveen",
+        lastName:"kumar"
+       }
+       const stud2={
+        firstName:"jd",
+        lastName:"kd"
+       }
+       console.log(stud.fullName.apply(stud2,["chennai","india"]));
+      document.getElementById("call");
+
+      //bind method
+
+      const vel={
+        fName:"mugen",
+        lName:"ra",
+        age:26,
+        fullname: function(){
+           return  this.fName +' '+ this.lName;
+        }
+      }
+      const vel1={
+        fName:"ram",
+        lName:"raj"
+      }
+      let fullname=vel.fullname.bind(vel1);
+     document.getElementById("bind").innerHTML=fullname();
+     console.log(fullname());
+    </script>
+</body>
+</html>
